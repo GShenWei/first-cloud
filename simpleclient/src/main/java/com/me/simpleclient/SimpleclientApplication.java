@@ -16,11 +16,13 @@ public class SimpleclientApplication {
 	private String port;
 	@Value("${spring.application.name}")
 	private String springApplicationName;
+	@Value("${nihao}")
+	private String nihao;
 	public static void main(String[] args) {
 		SpringApplication.run(SimpleclientApplication.class, args);
 	}
 	@RequestMapping("hi")
 	public String hi(){
-		return springApplicationName+":"+port+"--你好，我是一个简单的服务";
+		return springApplicationName+":"+port+"--你好，我是一个简单的服务"+"\n"+nihao;
 	}
 }
